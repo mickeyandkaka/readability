@@ -40,14 +40,13 @@ class py_read(object):
         p            = re.compile(r'charset="?(gb2312|gbk|utf-8)"?', re.I)
         content_type = response.headers['Content-Type'].lower()
         
-        if 'charset' in content_type:
-            charset = p.search(content_type).group().replace('charset=','').replace('"','')
-        else:
-            charset = p.search(response.text.lower()).group().replace('charset=','').replace('"','')
-
-
-        if charset == '':
-            charset = chardet.detect(response.content)
+        try:
+            if 'charset' in content_type:
+                charset = p.search(content_type).group().replace('charset=','').replace('"','')
+            else:
+                charset = p.search(response.text.lower()).group().replace('charset=','').replace('"','')
+        except:
+            pass
 
         # using gbk instead of gb2312 in case of unexpected errors
         if charset == 'gb2312':
