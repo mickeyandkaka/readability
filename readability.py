@@ -255,7 +255,7 @@ class Readability:
         except:
             pass
 
-        return title
+        return str(title)
 
 
     def initializeNode(self, node):

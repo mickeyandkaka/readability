@@ -24,12 +24,13 @@ fork from https://github.com/kingwkb/readability
 - - -
 用法：
 
-    from py_read import py_read
+```python
+from py_read import py_read
 
-    if __name__ == '__main__':
-        obj = py_read("http://www.chioka.in/differences-between-l1-and-l2-as-loss-function-and-regularization/");
+if __name__ == '__main__':
+    obj = py_read("http://www.chioka.in/differences-between-l1-and-l2-as-loss-function-and-regularization/");
 
-        print(obj.title)
-        print(obj.content)
-        
+    print(obj.title)
+    print(obj.content)
+```
 目前content内容是HTML表示
