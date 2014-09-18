@@ -53,4 +53,3 @@ class py_read(object):
             charset = 'gbk'
 
         return charset
-
