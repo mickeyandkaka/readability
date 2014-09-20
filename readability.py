@@ -60,7 +60,7 @@ class Readability:
         self.input = self.regexps['replaceFonts'].sub("<\g<1>span>",self.input)
         
         # self.html is a beautifulsoup object from self.input using charset
-        self.html  = BeautifulSoup(self.input, from_encoding = charset)
+        self.html  = BeautifulSoup(self.input)
         
         # remove unnecessary tags
         self.removeScript()
